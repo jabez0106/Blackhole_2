@@ -17,7 +17,7 @@ class Blackhole {
     fill(0);
     strokeWeight(20);
     stroke('rgba(100,0,100,100)');
-    translate(300,300)
+    translate(960,540)
   }
 
   scaleBounce() {
