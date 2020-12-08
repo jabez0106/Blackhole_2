@@ -1,5 +1,19 @@
+let cn;
+
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  cn.position(x);
+}
+
+function windowResized() {
+  centerCanvas();
+}
+
 function setup() {
-  createCanvas(1920, 1080);
+  cn = createCanvas(1920, 1080);
+  centerCanvas();
+  cn.parent('p5');
+
   blackhole = new Blackhole();
 }
 
@@ -24,7 +38,7 @@ class Blackhole {
     if (keyIsPressed === true) {
       let step = frameCount % 120;
       applyMatrix(step / 100, 0, 0, step / 100, 0, 0);
-      circle(0, 0, 600);
+      circle(0, 0, 900);
     } else {
       let step = frameCount % 20;
       applyMatrix(1 / step, 0, 0, 1 / step, 0, 0);
