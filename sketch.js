@@ -29,7 +29,7 @@ class Blackhole {
 
   display() {
     fill(0);
-    strokeWeight(20);
+    strokeWeight(0);
     stroke('rgba(100,0,100,100)');
     translate(960,540)
   }
