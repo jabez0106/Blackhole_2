@@ -1,4 +1,5 @@
 let cn;
+var bg_p;
 
 function centerCanvas() {
   var x = (windowWidth - width) / 2;
@@ -15,12 +16,16 @@ function setup() {
   cn.parent('p5');
 
   blackhole = new Blackhole();
+  bg_p = new bg_particle();
 }
 
 function draw() {
   background(20);
   blackhole.display();
   blackhole.scaleBounce();
+
+  bg_p.show();
+
 }
 
 class Blackhole {
