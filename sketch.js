@@ -1,9 +1,10 @@
 let cn;
-let bg_p;
+let ship;
 
 function centerCanvas() {
   var x = (windowWidth - width) / 2;
   cn.position(x);
+  ship = new Spaceship();
 }
 
 function windowResized() {
@@ -25,5 +26,16 @@ function draw() {
   blackhole.display();
   blackhole.scaleBounce();
 
+  ship.update();
+  ship.wrapEdges();
+  ship.display();
+
+  if (keyIsDown(LEFT_ARROW)) {
+    ship.turn(-0.03);
+  } else if (keyIsDown(RIGHT_ARROW)) {
+    ship.turn(0.03);
+  } else if (keyIsDown(UP_ARROW)) {
+    ship.thrust();
+  }
 
 }
